@@ -12,18 +12,30 @@ import React from "react";
 // }
 
 const App = () => {
+  const profiles = [
+    { name: "Taro", age: 10 },
+    { name: "Hanako", age: 13 },
+    { name: "NONAME" },
+  ];
   return (
     <div>
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
+      {profiles.map((profile) => {
+        return <User name={profile.name} age={profile.age} />;
+      })}
     </div>
   );
 };
 
-const Cat = () => {
-  return <div>"にゃーー"</div>;
+const User = (props) => {
+  return (
+    <div>
+      "にゃーー、{props.name}は{props.age}歳だにゃ"
+    </div>
+  );
+};
+
+User.defaultProps = {
+  age: 1,
 };
 
 export default App;
