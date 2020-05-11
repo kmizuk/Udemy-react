@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // class App extends Component {
 //   render() {
@@ -20,7 +21,7 @@ const App = () => {
   return (
     <div>
       {profiles.map((profile) => {
-        return <User name={profile.name} age={profile.age} />;
+        return <User name={profile.name} age={profile.age} key={index} />;
       })}
     </div>
   );
@@ -32,6 +33,11 @@ const User = (props) => {
       "にゃーー、{props.name}は{props.age}歳だにゃ"
     </div>
   );
+};
+
+User.PropTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired,
 };
 
 User.defaultProps = {
