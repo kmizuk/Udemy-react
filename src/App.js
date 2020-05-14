@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import React, { connect } from "react-redux";
+
+import {} from "react-redux";
 
 const App = () => <Counter></Counter>;
 
